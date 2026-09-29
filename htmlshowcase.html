@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>John Locklin - HTML Showcase</title>
+  <meta name="description" content="An interactive HTML-only playground: dropdowns, pages inside pages, images, links, forms and tables. Built by John while learning, with no CSS or JavaScript.">
+  <meta name="author" content="John Locklin">
+  <meta property="og:title" content="John Locklin - HTML Showcase">
+  <meta property="og:description" content="A clickable tour of HTML skills, built with HTML only.">
+  <meta property="og:type" content="website">
+</head>
+
+<body>
+
+  <header id="showcase-header">
+    <a href="../johnlocklin.html"><img src="../media/logo.png" alt="John Locklin logo - back to the homepage" width="64" height="64"></a>
+    <h1>HTML Showcase</h1>
+    <p>Welcome to the workshop. This page is a demo of what I know, and everything on it is a real, working HTML feature. Press <kbd>Ctrl</kbd>+<kbd>U</kbd> (or view the source from your browser menu) and you can read exactly how each piece is built.</p>
+    <a href="#main">Skip to the main content</a>
+  </header>
+
+  <dialog open>
+    <p>Hello! I'm a pop-up. Click the button to close me.</p>
+    <form method="dialog"><button type="submit">Close</button></form>
+  </dialog>
+
+  <hr>
+
+  <main id="main">
+
+    <h2>First, why not play some music?</h2>
+    <audio controls><source src="../media/htmlshowcase.mp3" type="audio/mpeg"></audio>
+
+    <hr>
+
+    <h2>A tiny browser</h2>
+    <p>Click a link and the page loads in the frame below.</p>
+
+    <nav aria-label="Pages to load in the viewer">
+      <ul>
+        <li><a href="../johnlocklin.html" target="viewer">My homepage</a></li>
+        <li><a href="htmlshowcase.html" target="viewer">This very page (a page inside itself)</a></li>
+        <li><a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="viewer">The First Website</a></li>
+      </ul>
+    </nav>
+
+    <iframe name="viewer" src="../johnlocklin.html" title="Viewer: a page loaded from the links above" width="700" height="350" loading="lazy">
+      Your browser can't show embedded pages. <a href="../johnlocklin.html">Open the homepage instead.</a>
+    </iframe>
+
+    <hr>
+
+    <h2>Two tiny websites written inside an attribute</h2>
+    <p>These frames use <code>srcdoc</code>, which holds a complete page as text inside the tag itself. There's no separate file. <code>sandbox=""</code> locks the page down so it can't do anything risky.</p>
+
+    <iframe title="Tiny site A, written inside an attribute" width="340" height="140" sandbox="" srcdoc="<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Tiny site A</title></head><body><h1>Tiny site A</h1><p>I live inside an attribute.</p><ul><li>No file</li><li>No server</li><li>Just a little guy</li></ul></body></html>"></iframe>
+    <iframe title="Tiny site B, also written inside an attribute" width="340" height="140" sandbox="" srcdoc="<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Tiny site B</title></head><body><h1>Tiny site B</h1><p>I am also a whole web page. <em>Hello!</em></p></body></html>"></iframe>
+
+    <hr>
+
+    <h2>FAQ (with dropdowns)</h2>
+    <details name="faq" open>
+      <summary>Why no CSS?</summary>
+      <p>I haven't learned it yet, and I wanted to understand the structure first.</p>
+    </details>
+    <details name="faq">
+      <summary>Why does everything look so plain?</summary>
+      <p>Plain HTML looks like this. Consider it the foundation of the website. CSS, which comes next is the paint!</p>
+    </details>
+    <details>
+        <summary>Is plain bad?</summary>
+        <p>Not at all. It loads fast and it works everywhere.</p>
+    </details>
+    <details name="faq">
+      <summary>What's next?</summary>
+      <p>CSS, then JavaScript, then wherever the wind takes me.</p>
+    </details>
+
+    <hr>
+
+    <h2>A dropdown that offers choices</h2>
+    <p>
+      <label for="pick-tag">Pick your favorite tag</label>
+      <select id="pick-tag" name="tag">
+        <optgroup label="Text">
+          <option>&lt;em&gt;</option>
+          <option>&lt;mark&gt;</option>
+        </optgroup>
+        <optgroup label="Structure">
+          <option>&lt;section&gt;</option>
+          <option>&lt;details&gt;</option>
+        </optgroup>
+      </select>
+    </p>
+
+    <hr>
+
+    <h2>A basic image with a caption</h2>
+    <figure>
+      <img alt="A black square next to a black circle" width="200" height="100"
+           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100'%3E%3Crect x='10' y='10' width='80' height='80'/%3E%3Ccircle cx='150' cy='50' r='40'/%3E%3C/svg%3E">
+      <figcaption>Figure 1: a square and a circle.</figcaption>
+    </figure>
+
+    <hr>
+
+    <h2>An image map (click the shapes!)</h2>
+    <p>Click the square to jump to the top, or the circle to jump to the bottom.</p>
+    <figure>
+      <img alt="A square and a circle you can click" width="200" height="100" usemap="#shapes"
+           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100'%3E%3Crect x='10' y='10' width='80' height='80'/%3E%3Ccircle cx='150' cy='50' r='40'/%3E%3C/svg%3E">
+      <map name="shapes">
+        <area shape="rect" coords="10,10,90,90" href="#showcase-header" alt="Square: jump to the Header">
+        <area shape="circle" coords="150,50,40" href="#showcase-footer" alt="Circle: jump to the Footer">
+      </map>
+      <figcaption>Click the square to jump to<br>the top of the page or the<br>circle to jump to the bottom.</figcaption>
+    </figure>
+
+    <hr>
+
+    <p>A link is more than "go to another page".</p>
+    <ul>
+      <li><a href="#main">Jump within this page</a> (<code>href="#id"</code>)</li>
+      <li><a href="../johnlocklin.html">Go to another page of mine</a> (a relative path)</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">The MDN HTML docs</a> (opens in a new tab)</li>
+      <li><a href="mailto:john@johnlocklin.com?subject=Hello%20from%20the%20playground">Start an email</a> (<code>mailto:</code>)</li>
+      <li><a href="../download.txt" download>Download a file</a> (<code>download</code>)</li>
+    </ul>
+
+    <hr>
+
+    <h2>Forms</h2>
+    <form>
+      <fieldset>
+        <legend>Pick one</legend>
+        <p><input type="radio" id="r-a" name="choice" value="a" checked><label for="r-a">Option A</label></p>
+        <p><input type="radio" id="r-b" name="choice" value="b"><label for="r-b">Option B</label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pick any</legend>
+        <p><input type="checkbox" id="c-1" name="likes" value="tables"><label for="c-1">Tables</label></p>
+        <p><input type="checkbox" id="c-2" name="likes" value="forms"><label for="c-2">Forms</label></p>
+        <p><input type="checkbox" id="c-3" name="likes" value="details"><label for="c-3">Details</label></p>
+      </fieldset>
+
+      <p>
+        <label for="f-message">A message</label><br>
+        <textarea id="f-message" name="message" rows="3" cols="40"></textarea>
+      </p>
+
+      <!-- Hidden inputs are not shown but are still sent with the form. -->
+      <input type="hidden" name="secret" value="hello-from-the-hidden-field">
+
+      <p><button type="reset">Clear Form</button></p>
+    </form>
+
+    <hr>
+
+    <h2>Read-only and disabled fields</h2>
+    <p>
+      <label for="f-readonly">Read-only (you can select it but not edit it)</label>
+      <input type="text" id="f-readonly" value="Look but don't touch" readonly>
+    </p>
+    <p>
+      <label for="f-disabled">Disabled (greyed out and never sent)</label>
+      <input type="text" id="f-disabled" value="Can't touch this" disabled>
+    </p>
+
+    <hr>
+
+    <h2>Small text tags</h2>
+    <ul>
+      <li><abbr title="HyperText Markup Language">HTML</abbr>: hover this to see the full name (<code>&lt;abbr&gt;</code>).</li>
+      <li><strong>Strong importance</strong> and <em>emphasis</em> and <mark>highlighted text</mark>.</li>
+      <li><q>A short quotation.</q> <cite>A made-up person</cite></li>
+      <li>H<sub>2</sub>O and E = mc<sup>2</sup>.</li>
+      <li>Edited text: <del datetime="2026-09-29">teh</del> <ins datetime="2026-09-29">the</ins>.</li>
+      <li><kbd>Ctrl</kbd>+<kbd>C</kbd> for keys, <samp>Error 418</samp> for program output, <var>x</var> for a variable, <code>&lt;code&gt;</code> for code.</li>
+      <li><bdo dir="rtl">This sentence is being read backwards.</bdo></li>
+    </ul>
+
+  </main>
+
+  <hr>
+
+  <footer id="showcase-footer">
+    <a href="../johnlocklin.html"><img src="../media/logo.png" alt="John Locklin logo - back to the homepage" width="64" height="64"></a>
+    <p>Version 0.1 · Last updated <time datetime="2026-09-29">29 September 2026</time></p>
+    <p><a href="../johnlocklin.html">Back to the homepage</a>  <a href="#showcase-header">Back to top</a></p>
+  </footer>
+</body>
+</html>
