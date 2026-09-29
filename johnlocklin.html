@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- Welcome! This code has been entirely written by hand.
+     I hope you enjoy, and if you catch anything you would have done differently, leave me a note! -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>John Locklin - A Working Portfolio</title>
+  <meta name="description" content="John Locklin's working portfolio - a showcase of hand-written pages, and a place to leave a note. Very much under construction.">
+  <meta name="author" content="John Locklin">
+  <meta property="og:title" content="John Locklin - A Working Portfolio">
+  <meta property="og:description" content="A hand-written, work-in-progress dev portfolio currently built with HTML only.">
+  <meta property="og:type" content="website">
+</head>
+
+<body>
+
+  <header id="header">
+    <a href="johnlocklin.html"><img src="media/logo.png" alt="John Locklin logo - back to the homepage" width="64" height="64"></a>
+    <h1>John Locklin - A Working Portfolio</h1>
+    <p>Welcome to my website. This website has been entirely hand written by me, John Locklin - an aspiring creative front-end software developer. This website will walk you through all the languages I have learned, each with their own individual spotlights. I hope you enjoy!</p>
+    <a href="#main">Skip to the main content</a>
+<hr>
+    <nav aria-label="Main Navigation">
+      <details>
+        <summary>Portfolio</summary>
+        <ul>
+          <li><a href="showcase/htmlshowcase.html">HTML</a></li>
+        </ul>
+      </details>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#leave-a-note">Leave a note</a></li>
+        <li>Certifications - COMING SOON</li>
+      </ul>
+    </nav>
+    <hr>
+  </header>
+
+  <main id="main">
+
+    <aside role="note">
+      <p><strong>Heads up:</strong> this site is a work in progress. You are stepping beyond the caution tape, and exploring a home that is still being built. Please don't forget your hardhat and take all choices with a grain of salt.</p>
+    </aside>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>I'm John Locklin. I grew up studying creative design - Painting, graphics, illustration, design principles, color theory. You name it. But - when it came time to work, I chased the paycheck and left the creative side behind to work a corporate job. Now, 10 years later, I am done with the black and white life of corporate and ready to reintroduce some color into my life. Enter: Creative Software Dev - an opportunity to use my technical savvy alongside my creative prowess and home it into projects I can lose myself into. I hope you stay a while, and enjoy this space.</p>
+      <figure>
+        <img src="media/headshot.png" alt="Headshot photo of website author, John Locklin" width="300" height="451">
+        <figcaption>That's Me.</figcaption>
+      </figure>
+      <h3>Things I'm currently playing with</h3>
+      <ul>
+        <li>Writing HTML entirely by hand</li>
+        <li>Failing, and understanding why</li>
+        <li>Wondering what all this will look like once I learn CSS</li>
+      </ul>
+    </section>
+
+    <section id="portfolio" aria-labelledby="portfolio-heading">
+      <h2 id="portfolio-heading">Current Portfolio</h2>
+      <p>There isn't much here yet. But, go ahead and take a look at what I have!</p>
+      <p><a href="showcase/htmlshowcase.html">Visit the HTML showcase page</a></p>
+      <p>CSS - COMING SOON</p>
+      <p>JavaScript - COMING SOON</p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>If you'd like to say hello, or you spotted a mistake in my HTML (please tell me), you can reach me here:</p>
+      <address>
+        <a href="mailto:john@johnlocklin.com">john@johnlocklin.com</a>
+      </address>
+    </section>
+
+    <section id="leave-a-note" aria-labelledby="note-heading">
+      <h2 id="note-heading">Leave me a note</h2>
+      <p>Wave, ask a question, or point out a bug. Notes go straight to me. Fields marked with an asterisk (*) are required.</p>
+
+      <form action="/notes" method="post">
+        <fieldset>
+          <legend>Say Hello!</legend>
+
+          <p>
+            <label for="visitor-name">Your name *</label><br>
+            <input type="text" id="visitor-name" name="name" maxlength="80" autocomplete="name" placeholder="John Doe" required>
+          </p>
+
+          <p>
+            <label for="visitor-email">Your email (optional, only if you'd like a reply)</label><br>
+            <input type="email" id="visitor-email" name="email" maxlength="120" autocomplete="email" aria-describedby="email-hint" placeholder="example@website.com">
+            <br><small id="email-hint">I'll only use this to answer your note.</small>
+          </p>
+
+          <p>
+            <label for="visitor-note">Your note *</label><br>
+            <textarea id="visitor-note" name="note" rows="6" cols="40" minlength="2" maxlength="1000" placeholder="Say-Hello!" required></textarea>
+          </p>
+
+          <p><button type="submit">Send note</button></p>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a href="johnlocklin.html"><img src="media/logo.png" alt="John Locklin logo - back to the homepage" width="64" height="64"></a>
+    <p>Version 0.1 - Last updated <time datetime="2026-09-29">29 September 2026</time></p>
+    <p>Built by hand with HTML only. <a href="#header">Back to top</a></p>
+  </footer>
+</body>
+</html>
